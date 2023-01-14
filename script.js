@@ -1,4 +1,3 @@
-//your code here
 var span = document.getElementsByTagName("span")[0]
 var orderedList = document.getElementById("orderedList")
 var prevBtn = document.getElementById("load_prev")
@@ -9,10 +8,15 @@ var pageNumberHere = 1
 var apiLink = `https://api.github.com/repositories/1296269/issues?page= + ${pageNumberHere}  + &per_page=5`
 
 async function fetching() {
-    var apiData = await fetch(apiLink)
-    var apiDataConvert = await apiData.json()
-    // console.log(apiDataConvert)
-    insert(apiDataConvert)
+    try {
+        var apiData = await fetch(apiLink)
+        var apiDataConvert = await apiData.json()
+        // console.log(apiDataConvert)
+        insert(apiDataConvert)
+    }
+    catch (error) {
+        console.log("Unable to fetch data" + error);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', fetching)
