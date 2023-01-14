@@ -28,7 +28,7 @@ function insert(dataName) {
         // var listItem = document.createElement("li")
         // listItem.textContent = e.title
         // orderedList.append(listItem)
-        listItem += `<li>${e.title}</li>`
+        listItem += `<li>${e.node_id}</li>`
     })
     orderedList.innerHTML = listItem
     console.log(dataName)
