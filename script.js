@@ -36,7 +36,7 @@ function insert(dataName) {
 
 
 function nextPage() {
-    // orderedList.textContent = ''
+    orderedList.textContent = ''
     listItem = ''
     i++
     apiLink = `https://api.github.com/repositories/1296269/issues?page= + ${i}  + &per_page=5`
@@ -48,7 +48,7 @@ nextBtn.addEventListener('click', nextPage)
 
 function prevPage() {
     if (i > 1) {
-        // orderedList.textContent = ""
+        orderedList.textContent = ""
         listItem = ''
         i--
         apiLink = `https://api.github.com/repositories/1296269/issues?page= + ${i}  + &per_page=5`
